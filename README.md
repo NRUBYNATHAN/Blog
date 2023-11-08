@@ -1,7 +1,0 @@
-## Blog website
-
-## Avinash
-
-
-## ruby
-

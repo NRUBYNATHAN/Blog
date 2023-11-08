@@ -1,18 +1,22 @@
 const blogList = document.getElementById("blogList");
 const blogDetails = document.getElementById("blogDetails");
 const head1 = document.querySelector(".inside-hero-three");
+const loader = document.getElementById("loader");
 
+loader.style.display = "block";
 // Fetch blog data from a dummy API
 fetch("https://admin-backend-rmbp.onrender.com/api/blog") // Sample dummy API for blogs
   .then((response) => response.json())
   .then((blogs) => {
+    loader.style.display = "none";
     // Display the list of blogs
     blogs.forEach((blog) => {
       const listItem = document.createElement("div");
       // Display the full content of the blog
       listItem.innerHTML = `
       <div class="ruby_div">
-            <img class="blog_img" src=${blog.image}/>
+      <div class="blog_i">
+            <img src=${blog.image}/></div>
             
             <h1 class="blog_title">${blog.title}</h1>
             </div>
