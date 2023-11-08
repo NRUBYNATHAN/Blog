@@ -11,9 +11,11 @@ fetch("https://admin-backend-rmbp.onrender.com/api/blog") // Sample dummy API fo
       const listItem = document.createElement("div");
       // Display the full content of the blog
       listItem.innerHTML = `
+      <div class="ruby_div">
             <img class="blog_img" src=${blog.image}/>
             
             <h1 class="blog_title">${blog.title}</h1>
+            </div>
     
           `;
       listItem.className = "blog-item";
@@ -26,11 +28,16 @@ fetch("https://admin-backend-rmbp.onrender.com/api/blog") // Sample dummy API fo
           .then((blogDetailsData) => {
             // Display the full content of the blog
             blogDetails.innerHTML = `
+            <div class="blogdetails_title">
             <h1 class="blogdetails_head">${blogDetailsData.title}</h1>
+            </div>
             <img class="blogdetails_img" src=${blogDetailsData.image}/>
             
             <h5 class="blogdetails_blog">${blogDetailsData.blog}</h5>
-            <a class="bt" href="#" onclick="location.reload();">Back to Blog List</a>
+            <div class="blogdetails_bt">
+            <a class="bt" href="#" onclick="location.reload();">Back to Blog List</a></div>
+            <div class="blogdetails_bt1">
+            <a class="bt" href="#" onclick="location.reload();">Back to Blog List</a></div>
           `;
             // Show the blog details and hide the list
             blogDetails.style.display = "block";
